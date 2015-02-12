@@ -1,0 +1,70 @@
+
+/ Section block
+.section_block.no_padding_top
+
+  = simple_form_for @person, :url => persons_path do |f|
+    / Section intro
+    .section_intro.no_margin_top
+      .wrap.ow_hidden
+        .vmiddle
+          %h3
+            = t 'person.inputs.section_titles.request'
+
+    / Group
+    .row_form.clear_fix
+      .fl_left.field
+        = f.input :name, label: t('person.inputs.name_label'),
+          required: true, input_html: { tabindex: '1', class: 'item_large has_info'}
+
+    / Group
+    .row_form.clear_fix
+      .fl_left.field
+        = f.input :paternal_surname, label: t('person.inputs.paternal_surname_label'),
+          required: true, input_html: { tabindex: '1', class: 'item_large has_info'}
+
+    / Group
+    .row_form.clear_fix
+      .fl_left.field
+        = f.input :maternal_surname, label: t('person.inputs.maternal_surname_label'),
+          required: true, input_html: { tabindex: '1', class: 'item_large has_info'}
+
+
+    / Group
+    .row_form.clear_fix
+      .fl_left.field
+        = f.input :sex, label: t('person.inputs.sex_label'),
+        collection: ["MUJER", "HOMBRE"], prompt:  t('person.inputs.sex_prompt'),
+        required: true, input_html: { tabindex: '1', class: 'item_large has_info'}
+
+
+    / Group
+    .row_form.clear_fix
+      .fl_left.field.clear_fix
+        = f.input :birth_date, label: t('person.inputs.birth_date_label'),
+          required: true, input_html: {tabindex: '1', placeholder: '',
+          class: '  item_large datepicker has_info', readonly: 'readonly' }
+
+
+    / Section intro
+    .section_intro.no_margin_top
+      .wrap.ow_hidden
+        .vmiddle
+          %h3
+            = t 'person.inputs.section_titles.address'
+
+    / fucking hidden_field_id doesn't work
+    = f.simple_fields_for @person.address do |ff|
+      = render partial: "address/data_address", locals: {f: ff}
+
+
+
+
+
+    / Section block
+    .section_block.ow_hidden
+      .fl_right
+        .form-actions.clear_fix
+          .fl_left.pl_25
+            %button.btn.btn-big.btn-primary{ type: 'submit' }
+              = raw t('buttons.ok')
+

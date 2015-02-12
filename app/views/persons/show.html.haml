@@ -1,0 +1,129 @@
+#content_passport
+  / Section intro
+  .section_intro.top
+
+    .wrap.ow_hidden
+      .vmiddle
+        %h3
+          = raw t('person.inputs.section_titles.show')
+
+  / Section block
+  .section_block
+
+    / Section block
+    .section_block.no_border.no_padding_top
+
+      / Section intro
+      .section_intro.no_margin_top
+        .wrap.ow_hidden
+          .vmiddle
+            %h3
+              = raw t('person.inputs.section_titles.basic_info')
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= "Datos personales de #{@person.name} #{@person.paternal_surname} #{@person.maternal_surname}"
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('person.inputs.sex_label')
+            .field_info.fl_left
+              = @person.sex
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('person.inputs.birth_date_label')
+            .field_info.fl_left
+              = @person.birth_date
+
+  / Section block
+  .section_block
+
+    / Section block
+    .section_block.no_border.no_padding_top
+
+      / Section intro
+      .section_intro.no_margin_top
+        .wrap.ow_hidden
+          .vmiddle
+            %h3
+              = raw t('person.inputs.section_titles.address')
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('address.inputs.define_address.state_label')
+            .field_info.fl_left
+              = @person.address.address_state
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('address.inputs.define_address.municipality_name_label')
+            .field_info.fl_left
+              = @person.address.municipality_name
+
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('address.inputs.define_address.human_settlement_name_label')
+            .field_info.fl_left
+              = @person.address.human_settlement_name
+
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('address.inputs.define_address.zip_code_label')
+            .field_info.fl_left
+              = @person.address.zip_code
+
+
+      / Form data resume
+      .form_data_resume
+
+        / Group
+        .row_form
+          .field.clear_fix
+            .field_name.fl_left
+              %h4= raw t('address.inputs.define_address.dir_label')
+            .field_info.fl_left
+              = "#{@person.address.name_road} - #{@person.address.number_ext}"
+              = "interior #{@person.address.number_int}" unless @person.address.number_int.blank?
+
+
+
+
+

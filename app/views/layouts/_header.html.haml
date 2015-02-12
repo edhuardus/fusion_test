@@ -11,6 +11,12 @@
           - if user_signed_in?
             %li
               = link_to ( t "buttons.exit" ), destroy_user_session_path , :method => :delete
+            %li
+              = link_to ( t "buttons.persons" ), persons_path
+            %li
+              = link_to "Crear Personal", new_person_url
+            %li
+              = link_to "Inicio", root_url
           - else
             %li
               = link_to ( t "buttons.sing_in" ), new_user_session_path

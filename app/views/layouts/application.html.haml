@@ -26,9 +26,13 @@
       / Header
       = render :partial => 'layouts/header'
       - if notice
-        %p.alert.alert-success= notice
+        %p.alert.alert-success
+          %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'alert', type: 'button' } ×
+          = notice
       - if alert
-        %p.alert.alert-danger= alert
+        %p.alert.alert-danger
+          %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'alert', type: 'button' } ×
+          = alert
 
       / Section content
       .section_content

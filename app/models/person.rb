@@ -16,4 +16,7 @@ class Person
 
   # === Accepts nested definitions
   accepts_nested_attributes_for :address
+
+  #validates
+  validates_presence_of :name, :paternal_surname, :maternal_surname, :sex, :birth_date
 end

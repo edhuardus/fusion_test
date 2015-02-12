@@ -1,0 +1,62 @@
+/ address (INEGI) =================================
+
+/ location ===
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :address_state, label: t('address.inputs.define_address.state_label'),
+      collection: Address.states_collections, required: true,
+      input_html: { tabindex: '1', class: 'item_large has_info populate_dynamic state_select',
+      data: { ajax_type: 'fill_dropdown', ajax_element: '.municipality_applicant', ajax_url: 'address/get_municipalities' } }
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :municipality_name, label: t('address.inputs.define_address.municipality_name_label'),
+    collection: [@address.municipality_name], required: true,
+    input_html: { tabindex: '1', class: 'item_large has_info municipality_select',
+    data: { ajax_type: 'populate_disctrict'} }
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :human_settlement_name, label: t('address.inputs.define_address.human_settlement_name_label'),
+      collection: [@address.human_settlement_name], required: true,
+      input_html: { tabindex: '1', class: 'item_large has_info district_select',
+      data: { ajax_type: 'populate_zip_code', ajax_element: '.zip_code_input', ajax_url: 'address/get_zip_code',
+      title: t('address.inputs.define_address.human_settlement_name_title'), content: t('address.inputs.define_address.human_settlement_name_content') } }
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :zip_code, label: t('address.inputs.define_address.zip_code_label'), required: true,
+      input_html: { tabindex: '1', class: 'item_large has_info',
+      data: { title: t('address.inputs.define_address.zip_code_title') } }
+
+
+
+.clear_fix.preloaders_address
+
+/ end location ===
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :name_road, label: t('address.inputs.define_address.name_road_label'), required: true,
+      input_html: { tabindex: '1', class: 'item_large show has_info name_of_road',
+      data: { title: t('address.inputs.define_address.name_road_title') } }
+
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :number_ext, label: t('address.inputs.define_address.number_ext_label'), required: true,
+      input_html: { tabindex: '1', class: 'item_large has_info',
+      data: { title: t('address.inputs.define_address.number_ext_title')} }
+
+/ Group
+.row_form.clear_fix
+  .fl_left.field
+    = f.input :number_int, label: t('address.inputs.define_address.number_int_label'),
+    required: false, input_html: { tabindex: '1', class: 'item_large has_info',
+    data: { title: t('address.inputs.define_address.number_int_title') } }

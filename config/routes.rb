@@ -3,6 +3,13 @@ FusionTest::Application.routes.draw do
 
   resources :persons
 
+  get  'address/get_states'                                  => 'address#get_states'
+  post 'address/get_location/:zip_code'                      => 'address#get_location'
+  post 'address/get_municipalities/:state_name'              => 'address#get_municipalities'
+  post 'address/get_districts/:state/:municipality'          => 'address#get_districts'
+  get  'address/get_zip_code/:state/:municipality/:district' => 'address#get_zip_code'
+  post 'address/get_ways/:state/:municipality/:type'         => 'address#get_ways'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
