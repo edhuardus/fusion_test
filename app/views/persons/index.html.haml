@@ -1,0 +1,24 @@
+%div
+  .portlet-content
+    #tabs.tab_container
+      %ul.tabs
+        %li.active= link_to "Crear Personal", new_person_url
+        %li.active= link_to "Inicio", root_url
+      .tab_content_container
+        #active.tab_content
+          %h4 Personal
+          %table{:class => "report"}
+            %thead
+              %tr
+                %th Nombre
+                %th Apellido
+                %th{:style => "width:14%"}
+            %tbody
+              - @persons.each do |p|
+                %tr{:class => cycle("odd","even")}
+                  %td
+                    = p.name
+                  %td
+                    = p.paternal_surname
+
+    .clear

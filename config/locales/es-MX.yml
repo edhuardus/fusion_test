@@ -1,0 +1,26 @@
+es-MX:
+  user:
+    input:
+      email: "Correo Electrónico"
+      password: "Contraseña"
+      password_confirmation: "Confirmar contraseña"
+      remember_me: "No cerrar sesión"
+
+  # Layout
+  layout:
+    page_title: "Fusion - test"
+
+  login:
+    sign_in: "Ingresa a Fusion - test"
+
+  # Buttons
+  buttons:
+    exit: "Salir"
+    sing_in: "Ingresar"
+
+  # Devise
+  devise:
+    failure:
+      user:
+        invalid: 'Contraseña o Email incorrecto.'
+        not_found_in_database: "Usuario no registrado"

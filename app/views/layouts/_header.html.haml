@@ -1,0 +1,16 @@
+/ Header
+%header#header
+
+  / Top navigation
+  .top_nav
+    .container
+
+      / Navigation
+      %nav
+        %ul
+          - if user_signed_in?
+            %li
+              = link_to ( t "buttons.exit" ), destroy_user_session_path , :method => :delete
+          - else
+            %li
+              = link_to ( t "buttons.sing_in" ), new_user_session_path

@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title= content_for?(:title) ? yield(:title) : ( t 'layout.page_title' )
+
+    / Meta
+    %meta{'http-equiv'=>'Content-Type', content: 'text/html; charset=utf-8'}
+    %meta{content: content_for?(:description) ? yield(:description) : ( t 'layout.page_description' ), name: 'description'}
+    %meta{name: 'format-detection', content: 'telephone=no'}
+    = csrf_meta_tags
+    = yield(:head)
+
+    / IE HTML5
+    /[if IE]
+      = javascript_include_tag 'html5'
+
+    / CSS
+    = stylesheet_link_tag 'application', :media => 'all'
+    = favicon_link_tag
+
+  %body{class: "#{controller_name} #{action_name}", data: {'rails-env' => Rails.env}}
+
+    / General wrapper
+    #general_wrapper
+
+      / Header
+      = render :partial => 'layouts/header'
+      - if notice
+        %p.alert.alert-success= notice
+      - if alert
+        %p.alert.alert-danger= alert
+
+      / Section content
+      .section_content
+
+        = yield()
+
+    / Footer
+    = render :partial => 'layouts/footer'
+
+    = javascript_include_tag 'application'
+    
+

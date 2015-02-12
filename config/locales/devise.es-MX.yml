@@ -1,0 +1,63 @@
+es-MX:
+  activerecord:
+    attributes:
+      user:
+        name: "Nombre de usuario"
+        email: "Correo Electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        remember_me: "No cerrar sesión"
+
+  errors:
+    messages:
+      not_found: "no encontrado"
+      already_confirmed: "ya ha sido confirmado"
+      not_locked: "no está bloqueado"
+
+  devise:
+    failure:
+      user:
+        not_found_in_database: "algo"
+      unauthenticated: 'Necesitas acceder a tu cuenta o registrarte antes de continuar.'
+      unconfirmed: 'Necesitas confirmar tu cuenta antes de continuar.'
+      locked: 'Tu cuenta esta bloqueada.'
+      invalid: 'Contraseña o Email incorrecto.'
+      invalid_token: 'Token de autenticación incorrecto.'
+      timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
+      inactive: 'Tu cuenta no ha sido activada.'
+    sessions:
+      link: 'Ingresar'
+      signed_in: 'Has ingresado correctamente.'
+      signed_out: 'Has salido correctamente.'
+      user:
+        unauthenticated: 'Necesitas acceder a tu cuenta o registrarte antes de continuar.'
+        unconfirmed: 'Necesitas confirmar tu cuenta antes de continuar.'
+        locked: 'Tu cuenta esta bloqueada.'
+        invalid: 'Contraseña o Email incorrecto.'
+        invalid_token: 'Token de autenticación incorrecto.'
+        timeout: 'Tu sesión ha expirado, por favor accede de nuevo para continuar.'
+        inactive: 'Tu cuenta no ha sido activada.'
+        invalid: 'Contraseña o Email incorrecto.'
+        unauthenticated: 'Necesitas acceder a tu cuenta o registrarte antes de continuar.'
+    passwords:
+      link: '¿Olvidaste tu contraseña?'
+      send_instructions: 'En unos minutos recibirás un email con las instrucciones de como redefinir tu contraseña.'
+      updated: 'Has cambiado correctamente tu contraseña. Automaticamente se ha iniciado tu sesión.'
+    confirmations:
+      link: "¿No has recibido las instrucciones de confirmación?"
+      send_instructions: 'En unos minutos recibirás un email con las instrucciones de como confirmar tu cuenta. '
+      confirmed: 'Tu cuenta ha sido confirmada correctamente. Automaticamente se ha iniciado tu sesión.'
+    registrations:
+      link: 'Registrarse'
+      signed_up: 'Te has registrado correctamente. Se ha enviado una confirmación a tu email. Revísalo por favor.'
+      updated: 'Actualizaste tu cuenta correctamente.'
+      destroyed: 'Adios! Has cancelado tu cuenta correctamente. Esperamos verte por aquí otra vez...'
+    unlocks:
+      link: "¿No has recibido las instrucciones de desbloqueo?"
+      send_instructions: 'En unos minutos recibirás un email con las instrucciones de como desbloquear tu cuenta.'
+      unlocked: 'Tu cuenta ha sido desbloqueada correctamente. Automaticamente se ha iniciado tu sesión'
+    mailer:
+      confirmation_instructions: 'Instrucciones de confirmación de tu cuenta'
+      reset_password_instructions: 'Instrucciones para cambiar la contraseña de tu cuenta'
+      unlock_instructions: 'Instrucciones de desbloqueo de tu cuenta'
+

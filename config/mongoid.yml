@@ -1,0 +1,48 @@
+development:
+    sessions:
+      default:
+        database: social_development
+        hosts:
+          - localhost:27017
+        options:
+          #  consistency: :strong
+          #  # In the test environment we lower the retries and retry interval to
+          #  # low amounts for fast failures.
+          #  max_retries: 1
+          #  retry_interval: 0
+staging:
+    sessions:
+      default:
+        database: social_development
+        hosts:
+          - localhost:27017
+        options:
+          #  consistency: :strong
+          #  # In the test environment we lower the retries and retry interval to
+          #  # low amounts for fast failures.
+          #  max_retries: 1
+          #  retry_interval: 0
+test:
+  sessions:
+    default:
+      database: social_test
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # # low amounts for fast failures.
+        # max_retries: 1
+        # retry_interval: 0
+production:
+  sessions:
+    default:
+      database: social_production
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+        # In the test environment we lower the retries and retry interval to
+        # # low amounts for fast failures.
+        # max_retries: 1
+        # retry_interval: 0
