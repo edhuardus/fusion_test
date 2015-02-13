@@ -11,6 +11,7 @@
 
 # General DOM Ready.
 $ ->
-  $('.datepicker').datepicker()
+  #$('.datepicker').datepicker()
+  $(".datepicker").datepicker({ maxDate: new Date, changeYear: true, yearRange: "-100:+0" });
   return
 
