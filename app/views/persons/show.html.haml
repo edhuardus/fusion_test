@@ -1,4 +1,7 @@
-#content_passport
+- unless @person.address.coordinates.blank?
+  = javascript_include_tag "google.map"
+
+#content_show
   / Section intro
   .section_intro.top
 
@@ -122,6 +125,33 @@
             .field_info.fl_left
               = "#{@person.address.name_road} - #{@person.address.number_ext}"
               = "interior #{@person.address.number_int}" unless @person.address.number_int.blank?
+
+  / Section block
+  .section_block
+
+    / Section block
+    .section_block.no_border.no_padding_top
+
+      / Section intro
+      .section_intro.no_margin_top
+        .wrap.ow_hidden
+          .vmiddle
+            %h3
+              = raw t('person.inputs.section_titles.map')
+
+
+      / Form data resume
+      .form_data_resume
+        - unless @person.address.coordinates.blank?
+          %div{:style => "width: 800px;"}
+            #map{:style => "width: 800px; height: 400px;",
+            "data-address-lat" => "#{@person.address.coordinates.last}",
+            "data-address-Lng" => "#{@person.address.coordinates.first}"}
+        -else
+          %p.alert.alert-danger
+            %button.close{ 'aria-hidden' => 'true', 'data-dismiss' => 'alert', type: 'button' } ×
+            = "No hay hubicacion en el mapa"
+
 
 
 

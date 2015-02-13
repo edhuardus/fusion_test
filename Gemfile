@@ -29,7 +29,9 @@ gem 'activeadmin-mongoid', '~> 0.2.0'
 
 gem 'simple_form', '~> 2.1.0'
 
-gem 'geocoder'
+gem 'geocoder', '~> 1.2.7'
+gem 'gmaps4rails', '~> 2.1.2'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

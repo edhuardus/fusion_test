@@ -7,12 +7,17 @@
     %meta{'http-equiv'=>'Content-Type', content: 'text/html; charset=utf-8'}
     %meta{content: content_for?(:description) ? yield(:description) : ( t 'layout.page_description' ), name: 'description'}
     %meta{name: 'format-detection', content: 'telephone=no'}
+    %script{:src => "//maps.google.com/maps/api/js?v=3.13&sensor=false&libraries=geometry", :type => "text/javascript"}
+    %script{:src => "//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js", :type => "text/javascript"}
     = csrf_meta_tags
     = yield(:head)
+
+
 
     / IE HTML5
     /[if IE]
       = javascript_include_tag 'html5'
+    = javascript_include_tag 'application'
 
     / CSS
     = stylesheet_link_tag 'application', :media => 'all'
@@ -38,10 +43,9 @@
       .section_content
 
         = yield()
+        = yield :scripts
 
     / Footer
     = render :partial => 'layouts/footer'
-
-    = javascript_include_tag 'application'
     
 
