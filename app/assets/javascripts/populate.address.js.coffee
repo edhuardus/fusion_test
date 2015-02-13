@@ -33,8 +33,7 @@ $ ->
     state = $(".populate_dynamic").val()
 
     $.ajax
-      #url: encodeURI("/address/get_districts/#{state}/#{value}")
-      url: encodeURI("/address/get_districts/Jalisco/Tala")
+      url: encodeURI("/address/get_districts/#{state}/#{value}")
       dataType: "json"
       type: "POST"
 

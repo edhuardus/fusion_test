@@ -1,6 +1,7 @@
 class Address
   include Mongoid::Document
   include Mongoid::Timestamps
+  include Geocoder::Model::Mongoid
 
   # === Fields definitions
 
@@ -13,6 +14,12 @@ class Address
   field :number_ext,              :type => String
   field :number_int,              :type => String
 
+  field :coordinates,             :type => Array
+
+  geocoded_by :full_address
+  #after_validation :geocode
+  before_validation :geocode
+
   # === Relationships definitions
   embedded_in :addresseable
 
@@ -21,6 +28,10 @@ class Address
 
   def self.states_collections
     State.all.collect(&:name)
+  end
+
+  def full_address
+    "#{name_road} #{number_ext}, #{zip_code}, #{municipality_name}, Mexico"
   end
 
 end

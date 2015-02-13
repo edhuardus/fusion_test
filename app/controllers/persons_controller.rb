@@ -2,6 +2,8 @@ class PersonsController < ApplicationController
 
   before_filter :authenticate_user!
 
+
+
   def index
     @persons = Person.all
   end
